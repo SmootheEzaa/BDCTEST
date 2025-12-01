@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน่วยที่ 1: วิทยาการข้อมูล - โรงเรียนพุทธชินราชพิทยา</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS เฉพาะหน้านี้เพื่อจัดเนื้อหาบทเรียน */
+        .lesson-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('school.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 10%;
+            text-align: center;
+        }
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            margin-top: -50px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .topic-box {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            background-color: #fff8f0;
+            border-radius: 0 10px 10px 0;
+        }
+        .step-list {
+            list-style: none;
+        }
+        .step-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .step-num {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 25px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-text">โรงเรียนพุทธชินราชพิทยา</div>
+        <img src="logo.png" alt="Logo" class="center-logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="content.html">บทเรียน</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="lesson-header">
+        <h1>หน่วยที่ 1: วิทยาการข้อมูล (Data Science)</h1>
+        <p>การนำข้อมูลมาใช้ประโยชน์เพื่อการตัดสินใจที่มีประสิทธิภาพ</p>
+    </div>
+
+    <div class="content-container reveal">
+        
+        <h2><i class="fas fa-book-open"></i> วิทยาการข้อมูลคืออะไร?</h2>
+        <p>วิทยาการข้อมูล (Data Science) คือ การนำข้อมูลที่มีอยู่มหาศาลมาวิเคราะห์ ประมวลผล และนำเสนอ เพื่อนำไปสู่ความรู้ความเข้าใจ หรือใช้ในการทำนายแนวโน้มในอนาคต ซึ่งประกอบด้วย 3 ศาสตร์หลัก คือ วิทยาการคอมพิวเตอร์, คณิตศาสตร์และสถิติ, และความรู้เฉพาะทางในด้านนั้นๆ</p>
+        <br>
+
+        <div class="topic-box">
+            <h3><i class="fas fa-database"></i> ยุคของข้อมูล (Data Era)</h3>
+            <p>ในปัจจุบัน เราอยู่ในยุคที่เรียกว่า <strong>Big Data</strong> ข้อมูลแบ่งออกเป็น 2 ประเภทหลัก:</p>
+            <ul>
+                <li><strong>ข้อมูลเชิงปริมาณ (Quantitative Data):</strong> ข้อมูลที่เป็นตัวเลข วัดค่าได้ เช่น คะแนนสอบ, ส่วนสูง, ราคาหุ้น</li>
+                <li><strong>ข้อมูลเชิงคุณภาพ (Qualitative Data):</strong> ข้อมูลบรรยาย ความรู้สึก ความคิดเห็น เช่น สีที่ชอบ, ความพึงพอใจ</li>
+            </ul>
+        </div>
+
+        <h2><i class="fas fa-cogs"></i> กระบวนการวิทยาการข้อมูล (Data Science Process)</h2>
+        <p>ตามหลักสูตร สสวท. กระบวนการในการทำ Data Science ประกอบด้วย 5 ขั้นตอนสำคัญ ดังนี้:</p>
+        <br>
+        
+        <ul class="step-list">
+            <li>
+                <div class="step-num">1</div>
+                <div>
+                    <strong>การตั้งคำถาม (Question Formulation)</strong>
+                    <p>ตั้งเป้าหมายว่า "เราอยากรู้อะไรจากข้อมูล?" ปัญหาคืออะไร และต้องการแก้ไขอย่างไร</p>
+                </div>
+            </li>
+            <li>
+                <div class="step-num">2</div>
+                <div>
+                    <strong>การเก็บรวบรวมข้อมูล (Data Collection)</strong>
+                    <p>หาแหล่งข้อมูลที่น่าเชื่อถือ ไม่ว่าจะเป็นการสัมภาษณ์ การใช้แบบสอบถาม หรือการดึงข้อมูลจากอินเทอร์เน็ต</p>
+                </div>
+            </li>
+            <li>
+                <div class="step-num">3</div>
+                <div>
+                    <strong>การทำความสะอาดข้อมูล (Data Cleaning)</strong>
+                    <p>ตรวจสอบข้อมูลที่ผิดพลาด ข้อมูลที่สูญหาย (Missing Data) และแก้ไขให้สมบูรณ์พร้อมใช้งาน</p>
+                </div>
+            </li>
+            <li>
+                <div class="step-num">4</div>
+                <div>
+                    <strong>การวิเคราะห์ข้อมูล (Data Analysis)</strong>
+                    <p>ค้นหาความสัมพันธ์ รูปแบบ หรือแนวโน้มที่ซ่อนอยู่ในข้อมูล (Exploratory Data Analysis: EDA)</p>
+                </div>
+            </li>
+            <li>
+                <div class="step-num">5</div>
+                <div>
+                    <strong>การสื่อสารและการนำเสนอ (Data Visualization)</strong>
+                    <p>นำผลลัพธ์มาสรุปและนำเสนอในรูปแบบที่เข้าใจง่าย เช่น กราฟ แผนภูมิ หรือ Dashboard</p>
+                </div>
+            </li>
+        </ul>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+        
+        <div style="text-align: center;">
+            <p><em>แหล่งอ้างอิง: หนังสือเรียนรายวิชาพื้นฐานวิทยาศาสตร์และเทคโนโลยี เทคโนโลยี (วิทยาการคำนวณ) ชั้นมัธยมศึกษาปีที่ 4 (สสวท.)</em></p>
+            <a href="content.html" class="btn-back"><i class="fas fa-arrow-left"></i> กลับสู่หน้าเลือกบทเรียน</a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            var reveal = document.querySelector(".reveal");
+            var windowHeight = window.innerHeight;
+            var elementTop = reveal.getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.style.transform = "translateY(0)";
+                reveal.style.opacity = "1";
+            }
+        });
+        // Initial call
+        document.querySelector(".reveal").style.transform = "translateY(20px)";
+        document.querySelector(".reveal").style.opacity = "0";
+        document.querySelector(".reveal").style.transition = "all 0.8s ease";
+        setTimeout(() => {
+             document.querySelector(".reveal").style.transform = "translateY(0)";
+             document.querySelector(".reveal").style.opacity = "1";
+        }, 300);
+    </script>
+</body>
+</html>
