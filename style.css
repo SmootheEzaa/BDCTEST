@@ -23,9 +23,19 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Nav */
+/* =========================================
+   ส่วน Header ปรับปรุงใหม่ (มีลูกเล่น + 2 ภาษา)
+   ========================================= */
+
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    /* ลูกเล่นใหม่: พื้นหลังไล่สีและขยับได้ */
+    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), #ff8c00, #FFD700);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* สั่งให้สีไหล */
+    
+    /* เพิ่มเส้นขอบล่างจางๆ */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
     padding: 0.5rem 5%;
     display: flex;
     justify-content: space-between;
@@ -36,13 +46,36 @@ header {
     z-index: 100;
 }
 
-/* ชื่อโรงเรียน */
-.brand-text {
+/* Keyframes สั่งให้พื้นหลังขยับ */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* กล่องเก็บชื่อ 2 ภาษา */
+.brand-container {
+    flex: 1; /* ดันพื้นที่ */
+    display: flex;
+    flex-direction: column; /* เรียงบน-ล่าง */
+    justify-content: center;
+}
+
+/* ชื่อไทย */
+.brand-thai {
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    flex: 1;
+    line-height: 1.2;
+}
+
+/* ชื่ออังกฤษ */
+.brand-eng {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 /* ตั้งค่ารูปโลโก้ตรงกลาง */
@@ -88,7 +121,9 @@ nav ul li a:hover {
     border-radius: 20px;
 }
 
-/* Hero Section */
+/* =========================================
+   ส่วน Hero Section (รูปปกโรงเรียน)
+   ========================================= */
 .hero {
     height: 80vh;
     display: flex;
@@ -97,9 +132,8 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     
-    /* --- แก้ไขจุดนี้ให้แล้วครับ --- */
+    /* รูปปกโรงเรียน (ใช้ school.jpg ตามที่คุณมี) */
     background: url('school.jpg') no-repeat center center/cover;
-    /* -------------------------- */
     
     position: relative;
 }
@@ -119,15 +153,23 @@ nav ul li a:hover {
     padding: 20px;
 }
 
+/* เอฟเฟค Typing + Gradient Text สำหรับหัวข้อ */
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    background: linear-gradient(to right, #FFD700, #ff8c00);
+    background: linear-gradient(to right, #FFD700, #FF4500, #FFD700);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.3); /* เงาบางๆ */
+    animation: gradientMove 3s linear infinite; /* สีไหล */
 }
 
+@keyframes gradientMove {
+    to { background-position: 200% center; }
+}
+
+/* ปุ่มเริ่มเรียน (Pulse Effect) */
 .btn-start {
     display: inline-block;
     padding: 15px 40px;
@@ -139,6 +181,7 @@ nav ul li a:hover {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+    animation: pulse 2s infinite; /* หัวใจเต้น */
 }
 
 .btn-start:hover {
@@ -146,7 +189,15 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(255, 69, 0, 0.6);
 }
 
-/* Section Styling */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 69, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
+}
+
+/* =========================================
+   ส่วนเนื้อหาทั่วไป (Section & Grid)
+   ========================================= */
 .section {
     padding: 4rem 10%;
 }
@@ -158,7 +209,6 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-/* Features Grid */
 .features-grid, .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -170,7 +220,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
-    transition: 0.3s;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-bottom: 5px solid var(--secondary-color);
     cursor: pointer;
 }
@@ -201,10 +251,8 @@ footer {
 }
 
 /* =========================================
-   เพิ่มเอฟเฟค Modern (ต่อท้ายไฟล์ style.css)
+   เอฟเฟคเพิ่มเติม (Scroll Reveal)
    ========================================= */
-
-/* 1. เอฟเฟค Scroll Reveal */
 .reveal {
     position: relative;
     transform: translateY(50px);
@@ -216,32 +264,99 @@ footer {
     transform: translateY(0);
     opacity: 1;
 }
-
-/* 2. เอฟเฟค Typing สำหรับหัวข้อ H1 */
-.hero h1 {
-    background: linear-gradient(to right, #FFD700, #FF4500, #FFD700);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientMove 3s linear infinite;
+/* ปุ่ม Back to Top */
+#myBtn {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* ทำเป็นวงกลม */
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
-@keyframes gradientMove {
-    to { background-position: 200% center; }
+#myBtn:hover {
+    background-color: #333; /* เปลี่ยนสีเมื่อชี้ */
+    transform: translateY(-5px); /* ลอยขึ้นนิดนึง */
+}
+/* =========================================
+   Mobile Responsive (Hamburger Menu)
+   ========================================= */
+
+/* ปกติบนคอมพิวเตอร์ ให้ซ่อนปุ่ม 3 ขีดไว้ */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    transition: 0.3s;
 }
 
-/* 3. เอฟเฟคปุ่ม Pulse */
-.btn-start {
-    animation: pulse 2s infinite;
+.hamburger:hover {
+    color: #333;
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(255, 69, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
+/* --- ตั้งค่าเมื่อหน้าจอเล็กกว่า 768px (มือถือ/แท็บเล็ต) --- */
+@media (max-width: 768px) {
+    
+    /* 1. ปรับ Header ให้เล็กลงหน่อยเพื่อประหยัดที่ */
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    .brand-thai { font-size: 1rem; }
+    .brand-eng { font-size: 0.6rem; display: none; /* ซ่อนชื่ออังกฤษในมือถือถ้ายาวไป */ }
+    
+    .center-logo {
+        height: 40px; /* ย่อโลโก้ */
+        margin: 0 10px;
+    }
+
+    /* 2. โชว์ปุ่ม 3 ขีด */
+    .hamburger {
+        display: block;
+    }
+
+    /* 3. ปรับเมนูให้เป็นแบบเลื่อนลงมา (Dropdown) */
+    nav ul {
+        position: absolute;
+        top: 100%; /* ให้เริ่มต่อจากขอบล่างของ Header พอดี */
+        right: 0;
+        width: 100%;
+        background: rgba(255, 69, 0, 0.95); /* สีส้มโปร่งแสงนิดๆ */
+        backdrop-filter: blur(10px); /* เบลอฉากหลังให้ดูหรู */
+        flex-direction: column; /* เรียงเมนูแนวตั้ง */
+        align-items: center;
+        padding: 20px 0;
+        
+        /* เริ่มต้นให้ซ่อนไว้ก่อน */
+        display: none; 
+        
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* คลาสนี้จะถูกเติมด้วย JavaScript เวลากดปุ่ม */
+    nav ul.active {
+        display: flex; /* เปลี่ยนเป็น show */
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    nav ul li {
+        margin: 15px 0; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    }
 }
 
-/* 4. เอฟเฟคการ์ดลอยแบบนุ่มนวล */
-.card {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* เอฟเฟคเลื่อนลง */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

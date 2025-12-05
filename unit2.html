@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน่วยที่ 1: แนวคิดเชิงคำนวณ - โรงเรียนพุทธชินราชพิทยา</title>
+    <title>หน่วยที่ 2: การแก้ปัญหาและขั้นตอนวิธี - โรงเรียนพุทธชินราชพิทยา</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS เฉพาะหน้านี้ */
+        /* CSS เฉพาะหน้านี้ (เหมือน unit1) */
         .lesson-header {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('school.jpg');
             background-size: cover;
@@ -27,26 +27,13 @@
             border-radius: 10px;
             position: relative;
         }
-        .topic-box {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-left: 5px solid var(--primary-color);
-            background-color: #fff8f0;
-            border-radius: 0 10px 10px 0;
-        }
-        .step-list {
-            list-style: none;
-        }
-        .step-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-        }
+        .step-list { list-style: none; }
+        .step-list li { margin-bottom: 1.5rem; display: flex; align-items: flex-start; }
         .step-num {
             background: var(--primary-color);
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -54,6 +41,7 @@
             margin-right: 15px;
             flex-shrink: 0;
             font-weight: bold;
+            font-size: 1.1rem;
         }
         .btn-back {
             display: inline-block;
@@ -65,9 +53,7 @@
             border-radius: 50px;
             transition: 0.3s;
         }
-        .btn-back:hover {
-            background-color: var(--primary-color);
-        }
+        .btn-back:hover { background-color: var(--primary-color); }
 
         /* Quiz CSS */
         .quiz-section {
@@ -105,11 +91,9 @@
             <div class="brand-thai">โรงเรียนพุทธชินราชพิทยา</div>
             <div class="brand-eng">Phuddhachinaratpittaya School</div>
         </div>
-
         <a href="index.html">
             <img src="logo2.png" alt="Logo" class="center-logo">
         </a>
-
         <nav>
             <div class="hamburger" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -125,68 +109,68 @@
     </header>
 
     <div class="lesson-header">
-        <h1>หน่วยที่ 1: แนวคิดเชิงคำนวณ</h1>
-        <p>(Computational Thinking)</p>
+        <h1>หน่วยที่ 2: การแก้ปัญหาและขั้นตอนวิธี</h1>
+        <p>(Problem Solving & Algorithms)</p>
     </div>
 
     <div class="content-container reveal">
         
-        <h2><i class="fas fa-brain"></i> แนวคิดเชิงคำนวณคืออะไร?</h2>
-        <p>แนวคิดเชิงคำนวณ (Computational Thinking) ไม่ใช่การคิดเหมือนคอมพิวเตอร์ แต่เป็นกระบวนการคิดวิเคราะห์เพื่อแก้ปัญหาอย่างเป็นระบบ เพื่อให้มนุษย์หรือคอมพิวเตอร์สามารถนำไปปฏิบัติได้ ประกอบด้วย 4 องค์ประกอบสำคัญ ได้แก่</p>
+        <h2><i class="fas fa-clipboard-check"></i> ขั้นตอนการแก้ปัญหา (Problem Solving Process)</h2>
+        <p>การแก้ปัญหาอย่างมีประสิทธิภาพ ไม่ว่าจะเป็นในชีวิตประจำวันหรือการเขียนโปรแกรม ควรปฏิบัติตาม 4 ขั้นตอนหลัก ดังนี้:</p>
         <br>
 
         <ul class="step-list">
             <li>
                 <div class="step-num">1</div>
                 <div>
-                    <strong>การแยกส่วนประกอบ (Decomposition)</strong>
-                    <p>การแตกปัญหาใหญ่ให้เป็นปัญหาย่อยๆ เพื่อให้จัดการได้ง่ายขึ้น</p>
+                    <strong>การวิเคราะห์และกำหนดรายละเอียดปัญหา (Analysis)</strong>
+                    <p>ทำความเข้าใจปัญหาอย่างละเอียด โดยต้องระบุให้ได้ว่า:</p>
+                    <ul style="font-size: 0.9rem; color: #555; margin-top: 5px;">
+                        <li><strong>ข้อมูลเข้า (Input):</strong> สิ่งที่โจทย์กำหนดมาให้คืออะไร?</li>
+                        <li><strong>ข้อมูลออก (Output):</strong> สิ่งที่โจทย์ต้องการคำตอบคืออะไร?</li>
+                        <li><strong>เงื่อนไข (Condition):</strong> วิธีการประมวลผลเพื่อให้ได้คำตอบ</li>
+                    </ul>
                 </div>
             </li>
             <li>
                 <div class="step-num">2</div>
                 <div>
-                    <strong>การหารูปแบบ (Pattern Recognition)</strong>
-                    <p>การหารูปแบบหรือความเหมือนที่เกิดขึ้นซ้ำๆ ในปัญหา เพื่อนำมาสร้างวิธีแก้ปัญหา</p>
+                    <strong>การวางแผนการแก้ปัญหา (Planning)</strong>
+                    <p>ออกแบบขั้นตอนวิธี (Algorithm) เพื่อใช้แก้ปัญหา โดยอาจใช้เครื่องมือช่วย เช่น</p>
+                    <ul style="font-size: 0.9rem; color: #555; margin-top: 5px;">
+                        <li><strong>รหัสลำลอง (Pseudocode):</strong> การเขียนคำอธิบายขั้นตอนเป็นข้อความ</li>
+                        <li><strong>ผังงาน (Flowchart):</strong> การใช้สัญลักษณ์รูปภาพแสดงลำดับขั้นตอน</li>
+                    </ul>
                 </div>
             </li>
             <li>
                 <div class="step-num">3</div>
                 <div>
-                    <strong>ความคิดเชิงนามธรรม (Abstraction)</strong>
-                    <p>การมุ่งเน้นเฉพาะรายละเอียดที่สำคัญ และตัดรายละเอียดที่ไม่จำเป็นออกไป</p>
+                    <strong>การดำเนินการแก้ปัญหา (Implementation)</strong>
+                    <p>ลงมือแก้ปัญหาตามแผนที่วางไว้ ในทางคอมพิวเตอร์คือขั้นตอนการ <strong>"เขียนโปรแกรม" (Coding)</strong> ตามภาษาคอมพิวเตอร์ที่เลือกใช้</p>
                 </div>
             </li>
             <li>
                 <div class="step-num">4</div>
                 <div>
-                    <strong>ขั้นตอนวิธี (Algorithm)</strong>
-                    <p>การลำดับขั้นตอนในการแก้ปัญหาอย่างชัดเจน เป็นขั้นเป็นตอน (Step-by-step)</p>
+                    <strong>การตรวจสอบและประเมินผล (Evaluation)</strong>
+                    <p>ตรวจสอบผลลัพธ์ว่าถูกต้องหรือไม่ ตรงตามที่โจทย์ต้องการไหม หากพบข้อผิดพลาด (Bug) ให้ทำการแก้ไข</p>
                 </div>
             </li>
         </ul>
 
-        <div class="topic-box">
-            <h3><i class="fas fa-lightbulb"></i> ประโยชน์ของการคิดเชิงคำนวณ</h3>
-            <ul>
-                <li>ช่วยให้แก้ปัญหาที่ซับซ้อนได้มีประสิทธิภาพ</li>
-                <li>สามารถนำไปประยุกต์ใช้ได้กับทุกสถานการณ์ในชีวิตประจำวัน</li>
-                <li>เป็นพื้นฐานสำคัญในการเขียนโปรแกรมคอมพิวเตอร์</li>
-            </ul>
-        </div>
-
         <div style="margin-top: 3rem; text-align: center;">
             <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
-                <i class="fab fa-youtube" style="color: red;"></i> สื่อการเรียนรู้: แนวคิดเชิงคำนวณ
+                <i class="fab fa-youtube" style="color: red;"></i> สื่อการเรียนรู้: การแก้ปัญหาและขั้นตอนวิธี
             </h3>
             <p style="margin-bottom: 1rem; color: #666; font-size: 0.9rem;">
-                บทที่ 1 แนวคิดเชิงคำนวณ โดย Project 14 (สสวท.)
+                บทที่ 2 การแก้ปัญหา โดย Project 14 (สสวท.)
             </p>
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <iframe 
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                    src="https://www.youtube.com/embed/gBi0t14EUkg" 
-                    title="แนวคิดเชิงคำนวณ - การแยกส่วนประกอบ" 
+                    src="https://www.youtube.com/embed/Zr-AJM-uUHE" 
+                    title="การแก้ปัญหาและขั้นตอนวิธี" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
@@ -198,25 +182,25 @@
 
         <div class="quiz-section">
             <h2 style="color: #333;"><i class="fas fa-puzzle-piece" style="color: var(--secondary-color);"></i> ทบทวนความรู้ท้ายบท</h2>
-            <p>ทดสอบความเข้าใจเกี่ยวกับองค์ประกอบของแนวคิดเชิงคำนวณ</p>
+            <p>ทดสอบความเข้าใจเกี่ยวกับ 4 ขั้นตอนการแก้ปัญหา</p>
 
             <div class="quiz-box">
-                <p class="question">1. การแบ่งปัญหาใหญ่ๆ ออกเป็นปัญหาย่อยๆ เพื่อให้แก้ได้ง่ายขึ้น ตรงกับองค์ประกอบใด?</p>
+                <p class="question">1. ขั้นตอนใดที่เราต้องระบุ "ข้อมูลเข้า" และ "ข้อมูลออก" ?</p>
                 <div class="options">
-                    <button onclick="checkAnswer(this, true)">ก. การแยกส่วนประกอบ (Decomposition)</button> <button onclick="checkAnswer(this, false)">ข. การหารูปแบบ (Pattern Recognition)</button>
-                    <button onclick="checkAnswer(this, false)">ค. ความคิดเชิงนามธรรม (Abstraction)</button>
-                    <button onclick="checkAnswer(this, false)">ง. ขั้นตอนวิธี (Algorithm)</button>
+                    <button onclick="checkAnswer(this, true)">ก. การวิเคราะห์และกำหนดรายละเอียดปัญหา</button> <button onclick="checkAnswer(this, false)">ข. การวางแผนการแก้ปัญหา</button>
+                    <button onclick="checkAnswer(this, false)">ค. การดำเนินการแก้ปัญหา</button>
+                    <button onclick="checkAnswer(this, false)">ง. การตรวจสอบและประเมินผล</button>
                 </div>
                 <div class="feedback"></div>
             </div>
 
             <div class="quiz-box">
-                <p class="question">2. การเขียนคู่มือการประกอบหุ่นยนต์เป็นลำดับขั้นตอน 1, 2, 3... ตรงกับข้อใด?</p>
+                <p class="question">2. การเขียน "ผังงาน (Flowchart)" อยู่ในขั้นตอนใด?</p>
                 <div class="options">
-                    <button onclick="checkAnswer(this, false)">ก. การแยกส่วนประกอบ</button>
-                    <button onclick="checkAnswer(this, false)">ข. การหารูปแบบ</button>
-                    <button onclick="checkAnswer(this, false)">ค. ความคิดเชิงนามธรรม</button>
-                    <button onclick="checkAnswer(this, true)">ง. ขั้นตอนวิธี (Algorithm)</button> </div>
+                    <button onclick="checkAnswer(this, false)">ก. การวิเคราะห์และกำหนดรายละเอียดปัญหา</button>
+                    <button onclick="checkAnswer(this, true)">ข. การวางแผนการแก้ปัญหา</button> <button onclick="checkAnswer(this, false)">ค. การดำเนินการแก้ปัญหา</button>
+                    <button onclick="checkAnswer(this, false)">ง. การตรวจสอบและประเมินผล</button>
+                </div>
                 <div class="feedback"></div>
             </div>
         </div>

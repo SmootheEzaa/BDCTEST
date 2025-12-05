@@ -5,83 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>บทเรียนวิทยาการคำนวณ ม.4</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <div class="brand-text">โรงเรียนพุทธชินราชพิทยา</div>
+        <div class="brand-container">
+            <div class="brand-thai">โรงเรียนพุทธชินราชพิทยา</div>
+            <div class="brand-eng">Phuddhachinaratpittaya School</div>
+        </div>
 
-        <img src="logo.png" alt="Logo" class="center-logo">
+        <a href="index.html">
+            <img src="logo2.png" alt="Logo" class="center-logo">
+        </a>
 
         <nav>
-            <ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul id="nav-menu">
                 <li><a href="index.html">หน้าแรก</a></li>
                 <li><a href="content.html">บทเรียน</a></li>
-                <li><a href="#">ติดต่อเรา</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
             </ul>
         </nav>
+    </header>
     </header>
 
     <section class="section">
         <h2 class="section-title">เลือกบทเรียน: วิทยาการคำนวณ ม.4</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">เนื้อหาอ้างอิงตามหลักสูตรแกนกลางการศึกษาขั้นพื้นฐาน (ฉบับปรับปรุง พ.ศ. 2560)</p>
+        <p style="text-align: center; margin-bottom: 2rem;">เนื้อหาอ้างอิงตามหนังสือเรียน สสวท. (ฉบับปรับปรุง พ.ศ. 2560)</p>
         
         <div class="course-grid">
+            
             <a href="unit1.html" style="text-decoration: none; color: inherit;">
                 <div class="card">
-                    <div class="card-icon" style="color: #FF4500;"><i class="fas fa-database"></i></div>
-                    <h3>หน่วยที่ 1: วิทยาการข้อมูล</h3>
-                    <p>(Data Science)</p>
+                    <div class="card-icon" style="color: #FF4500;"><i class="fas fa-brain"></i></div>
+                    <h3>หน่วยที่ 1: แนวคิดเชิงคำนวณ</h3>
+                    <p>(Computational Thinking)</p>
                     <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem; color: #555;">
-                        <li>การเก็บรวบรวมข้อมูล</li>
-                        <li>การทำความสะอาดข้อมูล</li>
-                        <li>การวิเคราะห์ข้อมูลเบื้องต้น</li>
+                        <li>การแยกส่วนประกอบ (Decomposition)</li>
+                        <li>การหารูปแบบ (Pattern Recognition)</li>
+                        <li>ความคิดเชิงนามธรรม (Abstraction)</li>
+                        <li>ขั้นตอนวิธี (Algorithm)</li>
                     </ul>
                     <div style="margin-top: 15px; color: #FF4500; font-weight: bold; font-size: 0.9rem; text-align: right;">
                         คลิกเพื่อเริ่มเรียน <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
             </a>
-            <div class="card">
-                <div class="card-icon" style="color: #FF4500;"><i class="fas fa-brain"></i></div>
-                <h3>หน่วยที่ 2: แนวคิดเชิงคำนวณ</h3>
-                <p>(Computational Thinking)</p>
-                <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem;">
-                    <li>การแยกส่วนประกอบ</li>
-                    <li>การหารูปแบบ</li>
-                    <li>การคิดเชิงนามธรรม</li>
-                    <li>การออกแบบขั้นตอนวิธี</li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <div class="card-icon" style="color: #FF4500;"><i class="fas fa-laptop-code"></i></div>
-                <h3>หน่วยที่ 3: การแก้ปัญหาด้วย Python</h3>
-                <p>(Problem Solving)</p>
-                <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem;">
-                    <li>โครงสร้างภาษาไพทอน</li>
-                    <li>ตัวแปรและชนิดข้อมูล</li>
-                    <li>โครงสร้างควบคุม (If-else, Loop)</li>
-                </ul>
-            </div>
+            <a href="unit2.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="card-icon" style="color: #FF4500;"><i class="fas fa-laptop-code"></i></div>
+                    <h3>หน่วยที่ 2: การแก้ปัญหาและขั้นตอนวิธี</h3>
+                    <p>(Problem Solving)</p>
+                    <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem;">
+                        <li>การวิเคราะห์และกำหนดรายละเอียดปัญหา</li>
+                        <li>การวางแผนการแก้ปัญหา</li>
+                        <li>การดำเนินการแก้ปัญหา</li>
+                        <li>การตรวจสอบและประเมินผล</li>
+                    </ul>
+                    <div style="margin-top: 15px; color: #FF4500; font-weight: bold; font-size: 0.9rem; text-align: right;">
+                        คลิกเพื่อเริ่มเรียน <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
 
-            <div class="card">
-                <div class="card-icon" style="color: #FF4500;"><i class="fas fa-drafting-compass"></i></div>
-                <h3>หน่วยที่ 4: การออกแบบและเทคโนโลยี</h3>
-                <p>(Design & Technology)</p>
-                <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem;">
-                    <li>กระบวนการออกแบบเชิงวิศวกรรม</li>
-                    <li>ระบบทางเทคโนโลยี</li>
-                    <li>วัสดุและเครื่องมือพื้นฐาน</li>
-                </ul>
-            </div>
+            <a href="unit3.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="card-icon" style="color: #FF4500;"><i class="fas fa-project-diagram"></i></div>
+                    <h3>หน่วยที่ 3: การพัฒนาโครงงาน</h3>
+                    <p>(Project Development)</p>
+                    <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem; color: #555;">
+                        <li>การกำหนดปัญหา</li>
+                        <li>การศึกษาความเป็นไปได้</li>
+                        <li>การพัฒนาและทดสอบโครงงาน</li>
+                    </ul>
+                    <div style="margin-top: 15px; color: #FF4500; font-weight: bold; font-size: 0.9rem; text-align: right;">
+                        คลิกเพื่อเริ่มเรียน <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="unit4.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="card-icon" style="color: #FF4500;"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>หน่วยที่ 4: การออกแบบและเทคโนโลยี</h3>
+                    <p>(Design & Technology)</p>
+                    <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem; color: #555;">
+                        <li>กระบวนการออกแบบเชิงวิศวกรรม</li>
+                        <li>ระบบทางเทคโนโลยี</li>
+                        <li>วัสดุและเครื่องมือพื้นฐาน</li>
+                    </ul>
+                    <div style="margin-top: 15px; color: #FF4500; font-weight: bold; font-size: 0.9rem; text-align: right;">
+                        คลิกเพื่อเริ่มเรียน <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 โรงเรียนพุทธชินราชพิทยา | พัฒนาสื่อการเรียนรู้ยุคใหม่</p>
     </footer>
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <script>
+        // --- Code สำหรับปุ่ม Back to Top ---
+        var mybutton = document.getElementById("myBtn");
+
+        // เมื่อเลื่อนลงมา 20px ให้โชว์ปุ่ม
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // เมื่อกดปุ่ม ให้เลื่อนกลับไปบนสุด
+        function topFunction() {
+            document.body.scrollTop = 0; // สำหรับ Safari
+            document.documentElement.scrollTop = 0; // สำหรับ Chrome, Firefox, IE, Opera
+        }
+        // ... (โค้ดปุ่ม Back to Top เดิม) ...
+
+        // --- ฟังก์ชันสำหรับ Hamburger Menu ---
+        function toggleMenu() {
+            var menu = document.getElementById("nav-menu");
+            // สลับคลาส active (ถ้ามีก็เอาออก ถ้าไม่มีก็ใส่)
+            menu.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>

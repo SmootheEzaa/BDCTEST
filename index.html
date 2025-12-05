@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>โรงเรียนพุทธชินราชพิทยา - แหล่งเรียนรู้ออนไลน์</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
    <header>
-        <div class="brand-text">โรงเรียนพุทธชินราชพิทยา</div>
+       <div class="brand-container">
+    <div class="brand-thai">โรงเรียนพุทธชินราชพิทยา</div>
+    <div class="brand-eng">Phuddhachinaratpittaya School</div>
+</div>
 
-        <img src="logo.png" alt="Logo" class="center-logo">
+        <a href="index.html">
+            <img src="logo2.png" alt="Logo" class="center-logo">
+        </a>
 
         <nav>
-            <ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul id="nav-menu">
                 <li><a href="index.html">หน้าแรก</a></li>
                 <li><a href="content.html">บทเรียน</a></li>
-                <li><a href="#">ติดต่อเรา</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
             </ul>
         </nav>
+    </header>
     </header>
 
     <section class="hero">
@@ -61,6 +72,38 @@
     <footer>
         <p>&copy; 2024 โรงเรียนพุทธชินราชพิทยา | พัฒนาสื่อการเรียนรู้ยุคใหม่</p>
     </footer>
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <script>
+        // --- Code สำหรับปุ่ม Back to Top ---
+        var mybutton = document.getElementById("myBtn");
+
+        // เมื่อเลื่อนลงมา 20px ให้โชว์ปุ่ม
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // เมื่อกดปุ่ม ให้เลื่อนกลับไปบนสุด
+        function topFunction() {
+            document.body.scrollTop = 0; // สำหรับ Safari
+            document.documentElement.scrollTop = 0; // สำหรับ Chrome, Firefox, IE, Opera
+        }
+        // ... (โค้ดปุ่ม Back to Top เดิม) ...
+
+        // --- ฟังก์ชันสำหรับ Hamburger Menu ---
+        function toggleMenu() {
+            var menu = document.getElementById("nav-menu");
+            // สลับคลาส active (ถ้ามีก็เอาออก ถ้าไม่มีก็ใส่)
+            menu.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
